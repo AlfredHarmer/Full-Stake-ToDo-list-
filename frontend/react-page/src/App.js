@@ -85,8 +85,8 @@ function App() {
   };
 
 
-  const [editingId, setEditingId] = useState(null);
-  const [editText, setEditText] = useState("");
+  const [editingId, setEditingId] = useState(null); // which todo is being edited
+  const [editText, setEditText] = useState(""); // temporary text while editing
 
  return (
   <div className="app">
@@ -110,6 +110,10 @@ function App() {
         onDelete={deleteTodo}
         onEdit={startEdit}
         onToggle={toggleTodo}
+        editingId={editingId}
+        editText={editText}
+        setEditText={setEditText}
+        saveEdit={saveEdit}
         />
       ))}
     </ul>
